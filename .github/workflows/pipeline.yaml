@@ -26,5 +26,17 @@ jobs:
       - name: "npm install"
         run: npm install
 
+      - name: "list dir"
+        run: ls -la -lh -lt
+
+      - name: "run linter"
+        run: npm run lint
+
       - name: "npm run build"
         run: npm run build
+
+      - name: "upload production ready build files"
+        uses: actions/upload-artifact@v4
+        with:
+          name: build
+          path: build
