@@ -1,24 +1,30 @@
 name: "React Application CI / Workflow"
 
 on:
-    push:
-        branches:
-            - main
-            - tinkal
-            - master 
-            
+  push:
+    branches:
+      - main
+      - tinkal
+      - master
+
 jobs:
-    build-and-test:
-        runs-on: ubuntu-latest
+  build-and-test:
+    runs-on: ubuntu-latest
 
-        steps:
-            - name: "setup Node Js For React Application"
-              uses : actions/setup-node@v4
-              with:
-                 node-version: "21"
+    steps:
+      - name: "setup Node Js For React Application"
+        uses: actions/setup-node@v4
+        with:
+          node-version: "21"
 
-            - name: "check Node Version"
-              run: node --version 
-              
-            - name: "clone the repository" 
-              uses: actions/checkout@v4
+      - name: "check Node Version"
+        run: node --version
+
+      - name: "clone the repository"
+        uses: actions/checkout@v4
+
+      - name: "npm install"
+        run: npm install
+
+      - name: "npm run build"
+        run: npm run build
