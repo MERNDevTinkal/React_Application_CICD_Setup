@@ -17,11 +17,9 @@ jobs:
         uses: actions/setup-node@v4
         with:
           node-version: "21"
-          cache: "npm"
 
       - name: "setup Vercel CLI "
         run: npm i -g vercel
-        # OAdQ61mOABN3zT868efhHYQC
 
       - name: "Download build artifacts / build files"
         uses: actions/download-artifact@v4
