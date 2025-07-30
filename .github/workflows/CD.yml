@@ -5,6 +5,7 @@ on:
     workflows: ["React Application CI / Workflow"]
     types:
       - completed
+  workflow_dispatch:
 
 jobs:
   deploy:
